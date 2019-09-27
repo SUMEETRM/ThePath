@@ -1,0 +1,1157 @@
+import java.util.*;
+class ThePath
+{
+
+    void Science(int iq1, String name, String school1)
+    {
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("Enter % in various subjects");
+        System.out.println("NOTE:marks>100 is considered as 100; marks<0 is considered as 0");
+        System.out.println("MATH");double math=sc.nextDouble(); if(math>100) math=100;
+        System.out.println("physics");double physics=sc.nextDouble();if(physics>100) {physics=100;} 
+        System.out.println("biology");double bio=sc.nextDouble(); if(bio>100) bio=100;
+        System.out.println("chem");double chem=sc.nextDouble(); if(chem>100) chem=100;
+        System.out.println("comp");double comp=sc.nextDouble();if(comp>100) {comp=100;}comp=comp/2;
+        double engineering=0.0;
+        System.out.println("\f");
+
+        int interests[]=new int[6];
+        System.out.println("Please enter your interest rating from 1 to 10");
+        System.out.println("NOTE:interest>10 is considered as 10; interest<0 is considered as 0");
+        System.out.println("mathematics related-acturial science, data science, pure mathematics etc....");interests[0]=sc.nextInt(); //190
+        System.out.println("Computer related-computer researcher, software developer, IT, AI ML etc...");interests[1]=sc.nextInt(); 
+        System.out.println("Physics related-aerospace, pure physics, astrophysics");interests[2]=sc.nextInt();
+        System.out.println("Engineering-civil, mechanical, mechantronics, eleectrical");interests[3]=sc.nextInt();
+        System.out.println("BIO-biotechnology, genetic engineering, doctor, surgeon, specialist etc");interests[4]=sc.nextInt();
+        System.out.println("chemistry-nanotechnology, chemical engineer, chemist");interests[5]=sc.nextInt();
+
+        for(int i=0; i<6; i++)
+        {
+
+            if(interests[i]>10)interests[i]=10;
+            if(interests[i]<0)interests[i]=0;
+            interests[i]=interests[i]*10;
+        }
+        engineering+=interests[3]+(math/2)+(physics/2);
+        physics=(physics/2)+(math/2)+interests[2];
+        math+=interests[0];
+        comp+=(math/2)+interests[1];
+        
+        
+        
+        
+        bio=bio+interests[4];
+        chem+=interests[5];
+        
+       
+        int rm=0;
+        do{
+            System.out.println("CHOOSE YOUR ROLE MODEL");
+            System.out.println("Albert einstien [1]       Stephen Hawking [2]      Bill Gates [3]     Steve jobs [4]     Elon Musk [5]      Jeff Bezos [6]");
+            System.out.println("Kalpana chawla [7]   neil amstrong [8]    Larry Page[ 9]        Charles Darwin [10]         Louis Pasteur [11]      Robert Hooke [12]     Dmitri Mendeleev  [13]  ");
+            System.out.println("  Alfred Nobel  [14]    Marie Curie [15]       Pythagoras [16]         Alan Turing  [17]         APJ abdul Kalam [18]");
+
+            rm=sc.nextInt();
+            if(rm==1 || rm==2 || rm==7 || rm==8 ||  rm==18){physics+=30;}
+          if(rm==3||rm==4||rm==5||rm==6||rm==9){comp+=30;}
+            if(rm==10||rm==11||rm==12)bio+=30;
+            if(rm==13 || rm==14||rm==15)chem+=30;
+          if(rm==16||rm==17)math+=30;
+              if(rm>18 && rm<1)System.out.println("Wrong choice");
+        }while(rm>=18 && rm<=1);
+System.out.println("\f");
+        int board=0;
+        do{
+            System.out.println("Current situation");
+            System.out.println("A-Under grad ABROAD-80% to 100%");
+            System.out.println("B-Under grad in India medical-80% to 100%");
+            System.out.println("C-Under grad in India-IIT or top ranked private engineering - 80% to 100%");
+            System.out.println("D-Can't decide between abroad or India - 50/50");
+            System.out.println("Debug2"+engineering);
+            char go = sc.next().charAt(0);
+            if(go=='a' || go=='A')board=1;
+
+            if(go=='b' || go=='B')board=2;
+
+            if(go=='c' || go=='C')board=3;
+
+            if(go=='d' || go=='D')board=4;
+        }while(board==0);
+        System.out.println("\f");
+
+        System.out.println("Generating report....................................................................");
+        for(long i =0; i <999999999; i++);
+        {
+            for(long j = 0; j <999999999; j++);
+            {for(long k = 0; k<999999999; k++);
+            }
+        }
+        System.out.println("\f");
+        System.out.println("                                                              THE PATH");
+        System.out.println("                                                               REPORT");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Subject chosen: SCIENCE                                    NAME:"+name);
+
+        System.out.println("Recommended options                                        School:"+school1);
+
+        if(physics>chem && physics>bio && physics>comp && physics>math  && physics>engineering)
+        {
+            System.out.println("Physics seems to be your strength. Some career and study options in physics are:-");
+            System.out.println("1-Aeronautical Engineering");
+            System.out.println("2-Astronomy");
+            System.out.println("3-Indian Air Force (IAF)");
+            System.out.println("4-Robotics");
+            System.out.println("5-Theorotical physics, Research");
+        }
+
+        if(chem>physics && chem>bio && chem>comp && chem>math && chem>engineering)
+        {
+            System.out.println("Chemistry seems to be your strength. Some career and study options in chemistry are:-");
+            System.out.println("Chemical Engineering");
+            System.out.println("Chemical research");
+            System.out.println("Nanotechnology");
+            System.out.println("Fornsic science and criminology");
+            System.out.println("Chemist");
+        }
+
+        if(math>physics && math>bio && math>comp && math>chem && math>engineering)
+        {
+            System.out.println("Mathematics seems to be your strength and main interest. Some career and study options in math are:-");
+            System.out.println("Computer Science");
+            System.out.println("Mathematician");
+            System.out.println("Data Science and Actusrial Science");
+
+        }
+
+        if(comp>physics && comp>bio && comp>chem && comp>math && comp>engineering)
+        {
+            System.out.println("Computers seems to be your strength. Some career and study options in computers are:-");
+            System.out.println("Computer Engineering");
+            System.out.println("Computer science");
+            System.out.println("robotics");
+            System.out.println("AI, ML");
+            System.out.println("Cyber Security");
+            System.out.println("Cloud, IOT");
+
+        }
+         if(engineering>physics && engineering>bio && engineering>chem && engineering>math && engineering>comp)
+        {
+            System.out.println("Engineering seems to be your strength. Some career and study options in engineering are:-");
+            System.out.println("Computer Engineering");
+            System.out.println("Civil Engineering");
+            System.out.println("Mechanical Engineering");
+            System.out.println("Aeronautical Engineering");
+            System.out.println("Chemical Engineering");
+            System.out.println("Telecom ");
+
+        }
+
+        if(bio>physics && bio>math && bio>comp && bio>chem && bio>engineering)
+        {
+            System.out.println("Biology seems to be your strength. Some career and study options in biology are:-");
+            System.out.println("Biotechnology");
+            System.out.println("Genetic engineering");
+            System.out.println("Sport science");
+            System.out.println("Physiotherapist");
+            System.out.println("Doctor, Dentist, phsycatrist, phsycologist");
+            System.out.println("Surgeon");
+
+        }
+
+       
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Options after 10th and 12th");
+        if(board==1)
+        {System.out.println("International board-after 10th");
+            System.out.println("ibo.org            cambridgeinternational.org");
+            System.out.println("");
+
+            System.out.println("TOP UNIVERSITIES(after 12th)");
+            System.out.println("Oxford");
+            System.out.println("MIT");
+            System.out.println("Cambridge");
+            System.out.println("Caltech");
+            System.out.println("Imperial College London");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+
+        else if(board==2)
+        {   System.out.println("after 10th :CBSE ");
+
+            System.out.println("after 12th :TOP UNIVERSITIES");
+            System.out.println("AIIMS");
+            System.out.println("CMC");
+            System.out.println("KMC");
+            System.out.println("AFMC");
+
+        }
+        if(board==3)
+        {System.out.println("after 10th CBSE  or HSC+Integrated");
+            System.out.println("After 12th");
+            System.out.println("IIT");
+            System.out.println("Bits");
+            System.out.println("VIT");
+            System.out.println("Manipal Institute of Technology");
+            System.out.println("SRM university");
+        }
+        if(board==4)
+        {System.out.println("after 10th :ISC or CBSE");
+            System.out.println("After 12th");
+            System.out.println("INDIA");
+            System.out.println("IIT");
+            System.out.println("Bits");
+            System.out.println("VIT");
+            System.out.println("Manipal Institute of Technology");
+            System.out.println("SRM university");
+
+            System.out.println("ABROAD");
+            System.out.println("Oxford");
+            System.out.println("MIT");
+            System.out.println("Cambridge");
+            System.out.println("Caltech");
+            System.out.println("Imperial College London");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("                                                    IQ test Results:-");
+        if(iq1>=9)System.out.println("Excellent IQ. 145+");
+        else if(iq1>=8)System.out.println("Good. 130+");
+        else if(iq1>=6)System.out.println("Average 105+");
+        else System.out.println("LOW (less than 100");
+System.out.println("Press 1 to know more info about career options or press any other number to end....");int nn1=sc.nextInt(); if(nn1==1){ExtraInfo();}
+        System.out.println("                                                 Thank you");
+
+    }
+
+    void Commerce(int iq1, String name1, String school2)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter % in various subjects");
+        System.out.println("Note:Marks>100 is considered as 100 | marks<0 is considered as 0");
+        System.out.println("MATH");double math=sc.nextDouble();if(math>100)math=100;
+        System.out.println("economics");double economics=sc.nextDouble();if(economics>100)economics=100;
+        System.out.println("Commercial application");double commercial=sc.nextDouble();if(commercial>100)commercial=100;
+        System.out.println("English");double english=sc.nextDouble();if(english>100)english=100;
+
+        double ent=(math/3)+economics/3+english/3;
+        double business=(math/3)+economics/3+english/3;
+        double stock=math;
+        double acc=(math/3)+economics/3+commercial/3;
+        double law=english;
+        double data=math/2+economics/2;
+        double manage=english/2+commercial/2;
+        System.out.println("\f");
+
+        int interests[]=new int[8];
+System.out.println("rate your interests in the following from 0 to 10");
+        System.out.println("NOTE:interest>10 is considered as 10; interest<0 is considered as 0");
+        System.out.println("Business");interests[1]=sc.nextInt();
+        System.out.println("Accountancy-CA, Income tax etc....");interests[2]=sc.nextInt();
+        System.out.println("Stock Market");interests[3]=sc.nextInt();
+        System.out.println("Actuarial Science");interests[4]=sc.nextInt();
+        System.out.println("LAW");interests[5]=sc.nextInt();
+        System.out.println("Entrepreneur");interests[6]=sc.nextInt();
+        System.out.println("Management-hotel, events, etc.");interests[7]=sc.nextInt();
+        for(int i=0; i<8; i++)
+        {
+
+            if(interests[i]>10)interests[i]=10;
+            if(interests[i]<0)interests[i]=0;
+            interests[i]=interests[i]*10;
+        }
+        business+=interests[1]*10;
+        acc+=interests[2]*10;
+        stock+=interests[3]*10;
+        data+=interests[4]*10;
+        law+=interests[5]*10;
+        ent+=interests[6]*10;
+        manage+=interests[7]*10;
+        int rm=0;System.out.println("\f");
+
+        do{
+            System.out.println("CHOOSE YOUR ROLE MODEL");
+            System.out.println(" Elon Musk [1]     Jeff Bezos  [2]      Warren Buffet [3]   narayana Murthy [4]   Mukesh Ambani[5]   Raghuram Rajan [6]   none [7]");
+
+            rm=sc.nextInt();
+            if(rm==1 || rm==2 ){ent+=30; manage+=30; data+=30;}
+            if(rm==3){stock+=30; data+=30;}
+            if(rm==4||rm==5)business+=30;
+            if(rm==6){acc+=30;law+=30;}
+            if(rm==7){acc+=30;ent+=30;stock+=30;business+=30; law+=30;   }
+        }
+        while(rm>7 && rm<1);System.out.println("\f");
+
+       
+        int board1=0;
+        do{
+            System.out.println("Current situation");
+            System.out.println("A-Under grad ABROAD-80% to 100%");
+            System.out.println("B-Under grad in India 80% to 100%");
+
+            System.out.println("C-Can't decide between abroad or India - 50/50");
+            char go = sc.next().charAt(0);
+            if(go=='a' || go=='A')board1=1;
+
+            if(go=='b' || go=='B')board1=2;
+
+            if(go=='c' || go=='C')board1=3;
+
+        }while(board1 ==0); 
+        System.out.println("\f");
+        System.out.println("Generating report....................................................................");
+        for(long i =0; i <999999999; i++);
+        {
+            for(long j = 0; j <999999999; j++);
+            {for(long k = 0; k<999999999; k++);
+            }
+        }
+        System.out.println("\f");
+        System.out.println("                                             THE PATH");
+
+        System.out.println("                                              REPORT");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Subject chosen: COMMERCE                                    NAME:"+name1);
+
+        System.out.println("Recommended options                                        School:"+school2);
+
+        if(business>ent && business>law && business>data && business>manage  && business>acc && business>stock)
+        {
+            System.out.println("Business seems to be your strength. Some career and study options are:-");
+            System.out.println("Business Management and Studies");
+            System.out.println("Business Marketing and Operations");
+            System.out.println("Finance and Banking");
+
+        }
+
+        if(ent>business && ent>law && ent>data && ent>manage  && ent>acc && ent>stock)
+        {
+            System.out.println("Entrepreneurship seems to be your strength. Some career and study options are:-");
+            System.out.println("Entrepreneurial Studies and Business Management");
+
+        }
+
+        if(stock>business && stock>law && stock>data && stock>manage  && stock>acc && stock>ent)
+        {
+            System.out.println("Stock trading,banking and business seems to be your strength. Some career and study options are:-");
+            System.out.println("Stock Market");
+            System.out.println("Finance and Banking");
+
+        }
+        if(acc>business && acc>law && acc>data && acc>manage  && acc>stock && acc>ent)
+        {
+            System.out.println("Accounting seems to be your strength. Some career and study options are:-");
+            System.out.println("Accounts");
+            System.out.println("Finance and Banking");
+
+        }
+        if(data>business && data>law && data>acc && data>manage  && data>stock && data>ent)
+        {
+
+            System.out.println("Data Science and Management seems to be your strength. Some career and study options are:-");
+            System.out.println("Data Science");
+            System.out.println("Actuarial Science");
+
+        }
+
+        if(law>business && law>data && law>acc && law>manage  && law>stock && law>ent)
+        {
+            System.out.println("Law and politics seems to be your strength. Some career and study options are:-");
+            System.out.println("Lawyer");
+            System.out.println("Political studies, IAS, IPS");
+
+        }
+
+        if(manage>business && manage>data && manage>acc && manage>law  && manage>stock && manage>ent)
+        {
+            System.out.println("Management seems to be your strength. Some career and study options are:-");
+            System.out.println("Event Manager");
+            System.out.println("Air host/hostess");
+            System.out.println("Business and project management");
+            System.out.println("Sports management");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Options after 10th and 12th");
+        if(board1==1)
+        {System.out.println("International board-after 10th");
+            System.out.println("ibo.org            cambridgeinternational.org");
+            System.out.println("");
+
+            System.out.println("TOP UNIVERSITIES(after 12th)");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("LSE");
+            System.out.println("Imperial College London");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+
+        else if(board1==2)
+        {   System.out.println("after 10th : ISC or HSC");
+
+            System.out.println("after 12th :TOP UNIVERSITIES");
+            System.out.println("NMIMS");
+            System.out.println("Hindu College, Delhi");
+            System.out.println("CHRIST UNIVERSITY BANGALORE:");
+            System.out.println("LOYOLA COLLEGE CHENNAI:");
+            System.out.println("Shri Ram College, Delhi");
+            System.out.println("Banglore law college");
+
+        }
+
+        if(board1 ==3)
+        {System.out.println("after 10th :ISC");
+            System.out.println("After 12th");
+            System.out.println("INDIA");
+            System.out.println("NMIMS");
+            System.out.println("Hindu College, Delhi");
+            System.out.println("CHRIST UNIVERSITY BANGALORE:");
+            System.out.println("LOYOLA COLLEGE CHENNAI:");
+            System.out.println("Shri Ram College, Delhi");
+            System.out.println("Banglore law college");
+
+            System.out.println("ABROAD");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("LSE");
+            System.out.println("Imperial College London");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("                                              IQ test Results:-");
+        if(iq1>=9)System.out.println("Excellent IQ. 145+");
+        else if(iq1>=8)System.out.println("Good. 130+");
+        else if(iq1>=6)System.out.println("Average 105+");
+        else System.out.println("LOW (less than 100");
+System.out.println("Press 1 to know more info about career options or press any other number to end....");int nn2=sc.nextInt(); if(nn2==1){ExtraInfo();}
+        System.out.println("                                                 Thank you");
+
+    }
+
+    void Arts(int iq3, String name3, String school3)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("                                         Enter % in various subjects");
+         System.out.println("NOTE:marks>100 is considered as 100; marks<0 is considered as 0");
+        System.out.println("english lit");double englishlit=sc.nextDouble();if(englishlit>100)englishlit=100;
+        System.out.println("arts");double arts=sc.nextDouble();if(arts>100)arts=100;
+        System.out.println("PE");double pe=sc.nextDouble();if(pe>100)pe=100;
+        System.out.println("english lang");double englishlang=sc.nextDouble();if(englishlang>100)englishlang=100;
+        System.out.println("TD");double td=sc.nextDouble();if(td>100)td=100;
+        System.out.println("\f");
+
+                
+        System.out.println("NOTE:If the values entered exceed the upper limit, they will get the default max value"); 
+        System.out.println("                                Please enter your interests from 1 to 10");
+        System.out.println("Interior Design");double id=sc.nextDouble();if(id>10)id=10; id=id*10; id+=arts/2 + td/2; 
+        System.out.println("Theatre");double t=sc.nextDouble();if(t>10)t=10; t=t*10; t+=arts/2 + englishlang/2;
+        System.out.println("Artist");double a=sc.nextDouble();if(a>10)a=10; a=a*10; a+=arts;
+        System.out.println("Literature");double lit=sc.nextDouble();if(lit>10)lit=10; lit=lit*10; lit+=englishlit/2 + englishlang/2; //from here
+        System.out.println("LAW");double law=sc.nextDouble();if(law>10)law=10; law=law*10; law+=englishlit/2 + englishlang/2;;
+        System.out.println("Sports Science and management");double sman=sc.nextDouble();if(sman>10)sman=10; sman=sman*10; sman+=pe;
+        System.out.println("Event Management");double eman=sc.nextDouble();if(eman>10)eman=10; eman=eman*10; eman+=45 + englishlang/2;
+        System.out.println("Fashion Design");double fd=sc.nextDouble();if(fd>10)fd=10; fd=fd*10; fd+=arts;
+        System.out.println("architecture");double ar=sc.nextDouble();if(ar>10)ar=10; ar=ar*10; ar+=td;
+        System.out.println("\f");
+        int rm=0;
+
+        do{
+            System.out.println("CHOOSE YOUR ROLE MODEL");
+            System.out.println(" Da Vinci[1]     Dan Brown [2]   JK Rowling(or some other author) [3]   some musician [4]   some actor [5] ");  
+            System.out.println("some designer [6]     some builder [7]      some lawyer [8]       none[9]");
+
+            rm=sc.nextInt();
+            if(rm==1 )a+=30;
+            if(rm==2 || rm==3)lit+=30;
+            if(rm==4 || rm==5)t+=30;
+            if(rm==6){fd+=30; id+=30;}
+            if(rm==7)ar+=30;
+            if(rm==8)law+=30;
+            if(rm==9){a+=30; lit+=30; t+=30; fd+=30; id+=30; ar+=30; law+=30; eman+=30; sman+=30; }
+        }while(rm>9 && rm<1);System.out.println("\f");
+
+        int board2=0;
+        do{
+            System.out.println("Current situation");
+            System.out.println("A-Under grad ABROAD-80% to 100%");
+            System.out.println("B-Under grad in India 80% to 100%");
+
+            System.out.println("C-Can't decide between abroad or India - 50/50");
+            char go = sc.next().charAt(0);
+            if(go=='a' || go=='A')board2=1;
+
+            if(go=='b' || go=='B')board2=2;
+
+            if(go=='c' || go=='C')board2=3;
+
+        }while(board2 ==0); 
+        System.out.println("\f");
+
+
+                
+        System.out.println("Generating report....................................................................");
+        System.out.println("THE PATH");
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+         System.out.println("Subject chosen: ARTS                                    NAME:"+name3);
+
+        System.out.println("Recommended options                                        School:"+school3);
+
+        if(a>lit && a>sman && a>eman && a>t && a>fd && a>ar && a>law && a>id)
+        {
+            System.out.println("Pure Arts seems to be your main stength");
+            System.out.println("artist");
+            System.out.println("Graphic design, VFX");
+
+        }
+
+        if(lit>a && lit>sman && lit>eman && lit>t && lit>fd && lit>ar && lit>law && lit>id)
+        {
+            System.out.println("Literature seems to be your main strength");
+            System.out.println("Writer");
+            System.out.println("Author, poet, playright");
+
+        }
+
+        if(sman>lit && sman>a && sman>eman && sman>t && sman>fd && sman>ar && sman>law && sman>id)
+        {
+                        System.out.println("Sports and sports management seems to be your main strength");
+            System.out.println("sports");
+            System.out.println("Sports science");
+            System.out.println("Sports management");
+
+        }
+        if(eman>lit && eman>sman && eman>a && eman>t && eman>fd && eman>ar && eman>law && eman>id)
+        {
+             System.out.println("Management seems to be your main strength");
+            System.out.println("event management");
+            System.out.println("Event planner, Hotel Manager");
+
+        }
+        if(fd>lit && fd>sman && fd>eman && fd>t && fd>a && fd>ar && fd>law && fd>id)
+        {
+          System.out.println("Fashion Design seems to be your main strength");
+            System.out.println("Fashion Design");
+            System.out.println("VFX, Animation");
+
+        }
+
+        if(t>lit && t>sman && t>eman && t>a && t>fd && t>ar && t>law && t>id)
+        {
+            System.out.println("Theatre and performance arts seems to be your main strength");
+            System.out.println(" Theatre-actor, musician, DJ etc.");
+            
+
+        }
+
+        if(id>lit && id>sman && id>eman && id>a && id>fd && id>ar && id>law && id>t)
+        {
+            System.out.println("Design seems to be your main strength");
+            System.out.println("Interior design");
+           System.out.println("Architecture");
+
+        }
+
+        if(law>lit && law>sman && law>eman && law>a && law>fd && law>ar && law>t && law>id)
+        {
+            System.out.println(" Political studies");
+            System.out.println(" lawyer");
+
+        }
+
+        if(ar>lit && ar>sman && ar>eman && ar>a && ar>fd && ar>t && ar>law && ar>id)
+        {
+            System.out.println("Civil Design seems to be your main strength");
+            System.out.println(" architect");
+
+        }
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Options after 10th and 12th");
+        if(board2==1)
+        {System.out.println("International board-after 10th");
+            System.out.println("ibo.org            cambridgeinternational.org");
+            System.out.println("");
+
+            System.out.println("TOP UNIVERSITIES(after 12th)");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("Princeton");
+            System.out.println("Berkely");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+
+        else if(board2==2)
+        {   System.out.println("after 10th : ISC or HSC");
+
+            System.out.println("after 12th :TOP UNIVERSITIES");
+            System.out.println("St. Xaviers, Mumbai");
+            System.out.println("Delhi University(LSR)");
+            System.out.println("CHansraj College");
+            System.out.println("LOYOLA COLLEGE CHENNAI:");
+            System.out.println("Shri Ram College, Delhi");
+            System.out.println("Banglore law college");
+
+        }
+
+        if(board2 ==3)
+        {System.out.println("after 10th :ISC");
+            System.out.println("After 12th");
+            System.out.println("INDIA");
+            System.out.println("St. Xaviers, Mumbai");
+            System.out.println("Delhi University(LSR)");
+            System.out.println("CHansraj College");
+            System.out.println("LOYOLA COLLEGE CHENNAI:");
+            System.out.println("Shri Ram College, Delhi");
+            System.out.println("Banglore law college");
+
+            System.out.println("ABROAD");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("Princeton");
+            System.out.println("Berkely");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+       
+
+        System.out.println("IQ test Results:-");
+        if(iq3>=9)System.out.println("Excellent IQ. 145+");
+        else if(iq3>=8)System.out.println("Good. 130+");
+        else if(iq3>=6)System.out.println("Average 105+");
+        else System.out.println("LOW (less than 100");
+System.out.println("Press 1 to know more info about career options or press any other number to end....");int nn2=sc.nextInt(); if(nn2==1){ExtraInfo();}
+        System.out.println("                                                 Thank you");
+    }
+    void IDK(int iq4, String name4, String school4)
+    {
+        Scanner sc=new Scanner(System.in);
+        double math=0;
+        double physics;
+        double bio=0;
+        double chem=0;
+        double ss1=0;
+        double ss2=0;
+        double eng=0;
+        double cs=0;
+        System.out.println("Enter % in various subjects");
+        System.out.println("NOTE:marks>100 is considered as 100; marks<0 is considered as 0");
+        System.out.println("MATH");math=sc.nextDouble();if(math>100)math=100;
+        System.out.println("physics");physics=sc.nextDouble();if(physics>100)physics=100;
+        System.out.println("biology");bio=sc.nextDouble();if(bio>100)bio=100;
+        System.out.println("chem");chem=sc.nextDouble();if(chem>100)chem=100;
+        System.out.println("history");ss1=sc.nextDouble();if(ss1>100)ss1=100;
+        System.out.println("geo");ss2=sc.nextDouble();if(ss2>100)ss2=100;
+        System.out.println("english");eng=sc.nextDouble();if(eng>100)eng=100;
+        System.out.println("computers");cs=sc.nextDouble();if(cs>100)cs=100;
+System.out.println("\f");
+                
+        int interests[]=new int[20];
+          System.out.println("NOTE:If the values entered exceed the upper limit, they will get the default max value"); 
+        System.out.println("                                Please enter your interests from 1 to 10");
+        System.out.println("mathematics related-acturial science, data science, pure mathematics etc....");interests[0]=sc.nextInt();
+        System.out.println("Computer related-computer researcher, software developer, IT, AI ML etc...");interests[1]=sc.nextInt();
+        System.out.println("Physics related-aerospace, pure physics, astrophysics");interests[2]=sc.nextInt();
+        System.out.println("Engineering-civil, mechanical, mechantronics, eleectrical");interests[3]=sc.nextInt();
+        System.out.println("Literature and Arts-press, journalism, writer, poet, artist, film industry etc.... ");interests[4]=sc.nextInt();
+        System.out.println("Business and entreprenuership");interests[5]=sc.nextInt();
+        System.out.println("Accountancy-CA, Income tax etc....");interests[6]=sc.nextInt();
+        System.out.println("Pilot, armed forces etc....");interests[7]=sc.nextInt();
+        System.out.println("BIO");interests[8]=sc.nextInt();
+        System.out.println("chem");interests[9]=sc.nextInt();
+        System.out.println("politics and law");interests[10]=sc.nextInt();
+        System.out.println("teaching");interests[11]=sc.nextInt();
+        System.out.println("Law");interests[12]=sc.nextInt();
+        System.out.println("Theatre");interests[13]=sc.nextInt();
+
+        System.out.println("Politics and govt. services");interests[14]=sc.nextInt();
+
+        System.out.println("architecture");interests[15]=sc.nextInt();
+        for(int i=0; i<16; i++)
+        {
+
+            if(interests[i]>10)interests[i]=10;
+            if(interests[i]<0)interests[i]=0;
+            interests[i]=interests[i]*10;
+        }System.out.println("\f");
+        double mathf=math+interests[0];
+        double physicsf=(math/2)+(physics/2)+interests[2];
+        double engineering=interests[3]+(math/2)+(physics/2);
+        double business=math+interests[5];
+        double acc=math+interests[6];
+        double army=((physics+chem+bio+math)/4)+interests[7];
+        double arts=eng+interests[4];
+        double csf=(cs/2)+(math/2)+interests[1];
+        double chemf=chem+interests[8];
+        double biof=bio+interests[9];
+        double ssf=ss1/2 +ss2/2+interests[10];
+        double teaching=85+interests[11];
+        double ent=interests[5]+math+5;
+        double lit=eng+interests[4];
+        double law=eng+interests[12];
+        double ar=eng/3 + math/3 + physics/3 + interests[15];
+        double politics=ss1+interests[14];
+        double act=interests[13]+eng;
+        int rm=0;
+        do{
+            System.out.println("CHOOSE YOUR ROLE MODEL");
+            System.out.println("Albert einstien [1]     Stephen Hawking 2           Bill Gates 3   Steve jobs 4         Elon Musk 5      Jeff Bezos 6");
+            System.out.println("Kalpana chawla 7   neil amstrong 8    Larry Page  9        Charles Darwin 10         Louis Pasteur 11      Robert Hooke 12     ");
+            System.out.println("  Dmitri Mendeleev 13       Alfred Nobel14    Marie Curie 15       Pythagoras 16         Alan Turing  17      APJ abdul Kalam (18)");
+            System.out.println(" Warren Buffet 19     Da Vinci 20    Dan Brown  21       JK Rowling(or some other author)22   some musician 23  ");
+            System.out.println("  some actor 24          some designer 25       some builder26          some lawyer 27");
+            System.out.println(" narayana Murthy 28      Mukesh Ambani 29         Raghuram Rajan 30         Narendra Modi 31        Soldier[32]  ");
+            rm=sc.nextInt();
+            if(rm==1 || rm==2 || rm==7 || rm==8 ||  rm==18){physicsf+=30;engineering+=28;}
+            if(rm==3||rm==4||rm==5||rm==6||rm==9 || rm==17){csf+=30;engineering+=30;}
+            if(rm==10||rm==11||rm==12)biof+=30;
+            if(rm==13 || rm==14||rm==15)chemf+=30;
+            if(rm==16||rm==17)mathf+=30; 
+            if(rm==19 || rm==28 || rm==29 || rm==30)business+=30;
+            if(rm==3 || rm==4 || rm==5 || rm==6)ent+=30;
+            if(rm==20 || rm==25)arts+=30;
+            if(rm==21 || rm==22)lit+=30;
+            if(rm==23 || rm==24)act+=30;
+            if(rm==26)ar+=30;
+            if(rm==27)law+=30;
+            if(rm==31)politics+=30;
+            if(rm==32)army+=30;
+            if(rm==30)acc+=30;
+
+            if(rm>32 && rm<1)System.out.println("Wrong choice");
+
+        }while(rm>32 && rm<1);System.out.println("\f");
+        int board3=0;
+
+        do{
+            System.out.println("Current situation");
+            System.out.println("A-Under grad ABROAD-80% to 100%");
+            System.out.println("B-Under grad in India 80% to 100%");
+
+            System.out.println("C-Can't decise between abroad or India - 50/50");
+            char go = sc.next().charAt(0);
+            if(go=='a' || go=='A')board3=1;
+
+            if(go=='b' || go=='B')board3=2;
+
+            if(go=='c' || go=='C')board3=3;
+
+        }while(board3 ==0); 
+        System.out.println("\f");
+
+        System.out.println("Generating report....................................................................");
+        
+        System.out.println("                                              THE PATH");
+        System.out.println("                                               REPORT");
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Subject chosen: Not DECIDED                                    NAME:"+name4);
+
+        System.out.println("Recommended options                                            School:"+school4);
+
+
+        if(physicsf>chemf && physicsf>biof && physicsf>csf && physicsf>mathf  && physicsf>engineering && physicsf>business && physicsf>acc && physicsf>arts && physicsf>army && physicsf>ssf && physicsf>ent && physicsf>lit && physicsf>teaching && physicsf>law && physicsf>ar && physicsf>politics  && physicsf>act)
+        {
+            System.out.println("Aeronautical Engineering");
+            System.out.println("Astronomy");
+            System.out.println("Indian Air Force (IAF)");
+            System.out.println("	Robotics");
+            System.out.println("Theorotical physics, Research");
+        }
+
+        if(physicsf<chemf && chemf>biof && chemf>csf && chemf>mathf  && chemf>engineering && chemf>business && chemf>acc && chemf>arts && chemf>army && chemf>ssf && chemf>ent && chemf>lit && chemf>teaching && chemf>law && chemf>ar && chemf>politics  && chemf>act)
+        {
+            System.out.println("Chemical Engineering");
+            System.out.println("Chemical research");
+            System.out.println("Nanotechnology");
+            System.out.println("Fornsic science and criminology");
+            System.out.println("Chemist");
+        }
+
+        if(mathf>chemf && mathf>biof && mathf>csf && mathf>chemf  && mathf>engineering && mathf>business && mathf>acc && mathf>arts && mathf>army && mathf>ssf && mathf>ent && mathf>lit && mathf>teaching && mathf>law && mathf>ar && mathf>politics  && mathf>act)
+        {
+            System.out.println("Computer Science");
+            System.out.println("Mathematician");
+            System.out.println("Data Science");
+
+        }
+
+        if(csf>chemf && csf>biof && csf>mathf && csf>chemf  && csf>engineering && csf>business && csf>acc && csf>arts && csf>army && csf>ssf && csf>ent && csf>lit && csf>teaching && csf>law && csf>ar && csf>politics  && csf>act)
+        {
+            System.out.println("Computer Engineering");
+            System.out.println("Computer science");
+            System.out.println("robotics");
+            System.out.println("AI, ML");
+            System.out.println("Cyber Security");
+            System.out.println("Cloud, IOT");
+
+        }
+
+        if(biof>chemf && biof>csf && biof>mathf && biof>chemf  && biof>engineering && biof>business && biof>acc && biof>arts && biof>army && biof>ssf && biof>ent && biof>lit && biof>teaching && biof>law && biof>ar && biof>politics  && biof>act)
+        {
+            System.out.println("Biotechnology");
+            System.out.println("Genetic engineering");
+            System.out.println("Sport science");
+            System.out.println("Physiotheraoist");
+            System.out.println("Doctor, Dentist, phsycatrist, phsycologist");
+            System.out.println("Surgeon");
+
+        }
+
+        if(engineering>chemf && engineering>csf && engineering>mathf && engineering>chemf  && engineering>biof && engineering>business && engineering>acc && engineering>arts && engineering>army && engineering>ssf && engineering>ent && engineering>lit && engineering>teaching && engineering>law && engineering>ar && engineering>politics  && engineering>act)
+        {
+            System.out.println("Computer Engineering");
+            System.out.println("Civil Engineering");
+            System.out.println("Mechanical");
+            System.out.println("Aeronautical");
+            System.out.println("Chemical");
+            System.out.println("Telecom");
+
+        }
+
+        if(business>chemf && business>csf && business>mathf && business>chemf  && business>biof && business>engineering && business>acc && business>arts && business>army && business>ssf && business>ent && business>lit && business>teaching && business>law && business>ar && business>politics  && business>act)
+        {
+            System.out.println("business Management and business studies");
+
+        }
+        if(acc>chemf && acc>csf && acc>mathf && acc>chemf  && acc>biof && acc>engineering && acc>business && acc>arts && acc>army && acc>ssf && acc>ent && acc>lit && acc>teaching && acc>law && acc>ar && acc>politics  && acc>act)
+        {
+            System.out.println("Finance and Accounting");
+
+        }
+        if(army>chemf && army>csf && army>mathf && army>chemf  && army>biof && army>engineering && army>business && army>acc && army>arts && army>ssf && army>ent && army>lit && army>teaching && army>law && army>ar && army>politics  && army>act)
+        {
+            System.out.println("IAS, IPS, NDA, Air Force, Navy, Army");
+
+        }
+        if(arts>chemf && arts>csf && arts>mathf && arts>chemf  && arts>biof && arts>engineering && arts>business && arts>acc && army<arts && arts>ssf && arts>ent && arts>lit && arts>teaching && arts>law && arts>ar && arts>politics  && arts>act)
+        {
+            System.out.println("artist");
+            System.out.println("VFX, animation");
+            System.out.println("GRaphic Design");
+
+        }
+        if(ssf>chemf && ssf>csf && ssf>mathf && ssf>chemf  && ssf>biof && ssf>engineering && ssf>business && ssf>acc && ssf<arts && ssf>arts && ssf>ent && ssf>lit && ssf>teaching && ssf>law && ssf>ar && ssf>politics  && ssf>act)
+        {
+            System.out.println("Social Science");
+            System.out.println("Historian");
+            System.out.println("Geology");
+            System.out.println("Archaeology");
+
+        }
+        if(ent>chemf && ent>csf && ent>mathf && ent>chemf  && ent>biof && ent>engineering && ent>business && ent>acc && ent<arts && ent>arts && ent>ssf && ent>lit && ent>teaching && ent>law && ent>ar && ent>politics  && ent>act)
+        {
+            System.out.println("Business and Entrepreneurial Studies");
+
+        }
+        if(lit>chemf && lit>csf && lit>mathf && lit>chemf  && lit>biof && lit>engineering && lit>business && lit>acc && lit<arts && lit>arts && lit>ssf && ent<lit && lit>teaching && lit>law && lit>ar && lit>politics  && lit>act)
+        {
+            System.out.println("Writer(movies)");
+            System.out.println("Poet, Author");
+            
+
+        }
+        if(teaching>chemf && teaching>csf && teaching>mathf && teaching>chemf  && teaching>biof && teaching>engineering && teaching>business && teaching>acc && teaching<arts && teaching>arts && teaching>ssf && teaching<ent && teaching>lit && teaching>law && teaching>ar && teaching>politics  && teaching>act)
+        {
+            System.out.println("teacher");
+            System.out.println("Professor");
+            
+
+        }
+        if(law>chemf && law>csf && law>mathf && law>chemf  && law>biof && law>engineering && law>business && law>acc && law<arts && law>arts && law>ssf && law>ent && law>lit && teaching<law && law>ar && law>politics  && law>act)
+        {
+            System.out.println("Lawyer");
+            System.out.println("IAS, IPS");
+
+        }
+        if(ar>chemf && ar>csf && ar>mathf && ar>chemf  && ar>biof && ar>engineering && ar>business && ar>acc && ar<arts && ar>arts && ar>ssf && ar>ent && ar>lit && ar>law && ar>teaching && ar>politics  && ar>act)
+        {
+            System.out.println("Architecture");
+            System.out.println("Interior design");
+
+        }
+        if(politics>chemf && politics>csf && politics>mathf && politics>chemf  && politics>biof && politics>engineering && politics>business && politics>acc && politics<arts && politics>arts && politics>ssf && politics>ent && politics>lit && politics>law && politics>teaching && ar<politics  && politics>act)
+        {
+            System.out.println("Politics");
+            System.out.println("Political studies");
+            System.out.println("IAS, IPS");
+
+        }
+        if(act>chemf && act>csf && act>mathf && act>chemf  && act>biof && act>engineering && act>business && act>acc && act<arts && act>arts && act>ssf && act>ent && act>lit && act>law && act>teaching && act<politics  && politics<act)
+        {
+            System.out.println("Theatre-Actor, musician etc.");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Options after 10th and 12th");
+        if(board3==1)
+        {System.out.println("International board-after 10th");
+            System.out.println("ibo.org            cambridgeinternational.org");
+            System.out.println("");
+
+            System.out.println("TOP UNIVERSITIES(after 12th)");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("Princeton");
+            System.out.println("Berkely");
+            System.out.println("MIT");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+
+        else if(board3==2)
+        {   System.out.println("after 10th : ISC or HSC or CBSE");
+
+            System.out.println("after 12th :TOP UNIVERSITIES");
+            System.out.println("     SCIENCE                           COMMERCE                                  ARTS");
+            System.out.println("       IIT                       Shri Ram College, Delhi                St. Xaviers, Mumbai");
+            System.out.println("BITS, VIT, MIT, VJTI             LOYOLA COLLEGE CHENNAI                 Delhi University(LSR)");
+
+        }
+
+        if(board3 ==3)
+        {System.out.println("after 10th :ISC");
+            System.out.println("After 12th");
+            System.out.println("INDIA");
+            System.out.println("after 12th :TOP UNIVERSITIES");
+            System.out.println("     SCIENCE                           COMMERCE                                  ARTS");
+            System.out.println("       IIT                       Shri Ram College, Delhi                St. Xaviers, Mumbai");
+            System.out.println("BITS, VIT, MIT, VJTI             LOYOLA COLLEGE CHENNAI                 Delhi University(LSR)");
+
+            System.out.println("ABROAD");
+            System.out.println("Oxford");
+            System.out.println("HARVARD");
+            System.out.println("STANFORD");
+            System.out.println("Princeton");
+            System.out.println("Berkely");
+            System.out.println("MIT, Caltech");
+            System.out.println("Visit timeshighereducation.com   for more details on top universities");
+
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("IQ test Results");
+        if(iq4>=9)System.out.println("Excellent  :   145+");
+        else if(iq4>=8)System.out.println("Good   :130+");
+        else if(iq4>=6)System.out.println("Average  :   105+");
+        else System.out.println("LOW    :   less than 100");
+
+        System.out.println("Press 1 to know more info about career options or press any number to finish");int nn=sc.nextInt(); if(nn==1){ExtraInfo();}
+        System.out.println("                                                Thank you");
+
+            
+    }
+
+    void ExtraInfo()
+    {
+        System.out.println("There are 100s of in demand careers right now:-");
+        System.out.println("Artificial intelligence and ML");
+        System.out.println("Aeronautical Engineering");
+        System.out.println("Mechanical");
+        System.out.println("Computer science");
+        System.out.println("Actuarial Science");
+        System.out.println("Accountancy");
+        System.out.println("Advertising");
+        System.out.println("Aeronautical Engineering");
+        System.out.println("Agricultural Science");
+        System.out.println("ATC");
+        System.out.println("Air host/hostess");
+        System.out.println("Animation");
+        System.out.println("Architectural Engineering");
+        System.out.println("Astronomy");
+        System.out.println("Automobile Engineering");
+        System.out.println("Banking");
+        System.out.println("Biotechnology");
+        System.out.println("Business Administration");
+        System.out.println("Cardiology");
+        System.out.println("Chef");
+        System.out.println("Commercial Pilot");
+        System.out.println("Chemical Engineering");
+        System.out.println("Civil Engineering");
+        System.out.println("Chartered Accountancy");
+        System.out.println("Computer Engineering");
+        System.out.println("Creative Writing");
+        System.out.println("Dance");
+        System.out.println("Dentistry");
+        System.out.println("Disc Jockeying");
+        System.out.println("Electrical Engineering");
+        System.out.println("Ethical Hacking");
+        System.out.println("Fashion Designing");
+        System.out.println("Film Making");
+        System.out.println("Forestry/ Wildlife");
+        System.out.println("Gaming Industry");
+        System.out.println("Geology");
+        System.out.println("Graphic Designing");
+        System.out.println("Hotel Management");
+        System.out.println("Indian Air Force (IAF)");
+        System.out.println("Indian Army");
+        System.out.println("Indian Navy");
+        System.out.println("Intelligence Service");
+        System.out.println("Interior Designing");
+        System.out.println("Internet of Things (IoT)");
+        System.out.println("Mathematics");
+        System.out.println("Mechanical Engineering");
+        System.out.println("Mechatronics Engineering");
+        System.out.println("Nanotechnology");
+        System.out.println("Neurology");
+        System.out.println("Pediatrics");
+
+        System.out.println("Photography");
+
+        System.out.println("Petroleum Engineering");
+        System.out.println("Physics");
+        System.out.println("Radio Jockey");
+        System.out.println("Robotics");
+        System.out.println("Sports Management");
+        System.out.println("Sports/Physical Fitness");
+        System.out.println("Supply Chain Management");
+        System.out.println("Surgical Technology");
+        System.out.println("Software developer");
+        System.out.println("Technical Writing");
+        System.out.println("Teaching");
+        System.out.println("Travel and Tourism");
+        System.out.println("Theology and religion");
+        System.out.println("Web Designing");
+        System.out.println("Zoology");
+    }
+
+    public static void main(String[]args)
+    {
+        ThePath obj=new ThePath();
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println(" 8888888 8888888888 8 8888        8 8 8888888888             8 888888888o      .8.    8888888 8888888888 8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 8888    `88.   .888.         8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 8888     `88  :88888.        8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 8888     ,88 . `88888.       8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 888888888888           8 8888.   ,88'.8. `88888.      8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 888888888P'.8`8. `88888.     8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888888888888 8 8888                   8 8888      .8' `8. `88888.    8 8888       8 8888888888888 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 8888     .8'   `8. `88888.   8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 8888                   8 8888    .888888888. `88888.  8 8888       8 8888        8 ");
+        System.out.println("       8 8888       8 8888        8 8 888888888888           8 8888   .8'       `8. `88888. 8 8888       8 8888        8 ");
+        double iq[]=new double[10];
+        int iqctr=0;
+        System.out.println("\t\t\t\t\t WELCOME TO THE PATH-offline career, board, subject counselling");   
+        for(long i =0; i <999999999; i++);
+        {
+            for(long j = 0; j <999999999; j++);
+            {for(long k = 0; k<999999999; k++);
+            }
+
+        }
+        System.out.println("\f");
+
+        System.out.println("HELLO. Please enter your name : ");String name=sc.nextLine();
+
+        System.out.println("Please enter the name of your school");String school=sc.nextLine();
+
+        System.out.println("Please enter your age");double age=sc.nextDouble();
+        System.out.println("Thank you");
+
+        System.out.println("\t\t\t\t\t\t\t\t\t IQ TEST");                                            //PART 1
+        System.out.println("                              1:Roger's grandfather's son could be Roger's daughter's grandfather.");
+        System.out.println("                                          1-TRUE                       2-FALSE");
+        
+        iq[0]=sc.nextInt();System.out.println("\f");
+        System.out.println("                       2:   What is the number that is one-tenth of one-fourth of one-fifth of one-half of 12,000?");
+        iq[1]=sc.nextInt();System.out.println("\f");
+        System.out.println("                         3:The fifth consonant appearing at the beginning of this sentence is the letter i");
+        System.out.println("                                          1-TRUE                       2-FALSE");iq[2]=sc.nextInt();System.out.println("\f");
+        System.out.println("                         4:What number best completes the following series?   1, 9, 25, __, 81, 121");
+        System.out.println("                                            36        45              64           49");iq[3]=sc.nextInt();System.out.println("\f");
+        System.out.println("                5: If the second day of the month is a Monday, then the eighteenth day of the month is a Wednesday.");
+        System.out.println("                                          1-TRUE                       2-FALSE");iq[4]=sc.nextInt();System.out.println("\f");
+        System.out.println("                         6:If some Mees are Moos and all Moos are Yees, are all Yees also Mees?");
+        System.out.println("                                                1- Yes                  2- NO");iq[5]=sc.nextInt();System.out.println("\f");
+        System.out.println("                7:How many numbers are in the following series if all terms are included?0, 3, 6, 9, 12, 15, 18, ..., 960");iq[6]=sc.nextInt();System.out.println("\f");
+        System.out.println("                 8:SAM, WHO IS 27 YEARS OLD, IS 3 TIMES OLDER THAN TODD. HOW OLD WILL SAM BE WHEN TODD IS 37?");iq[7]=sc.nextInt();System.out.println("\f");
+        System.out.println(" 9:AFTER WALKING 3 BLOCKS EAST, THEN FOUR BLOCKS SOUTH, AND FINALLY THREE BLOCKS WEST, YOU WILL BE FOUR BLOCKS SOUTH OF YOUR STARTING POINT.");
+        System.out.println("                                               1-TRUE                       2-FALSE");iq[8]=sc.nextInt();System.out.println("\f");
+
+        System.out.println("\f");
+        if(iq[0]==1)iqctr++;
+        if(iq[1]==30)iqctr++;
+        if(iq[2]==2)iqctr++;
+        if(iq[3]==49)iqctr++;
+        if(iq[4]==1)iqctr++;
+        if(iq[5]==2)iqctr++;
+        if(iq[6]==321)iqctr++;
+        if(iq[7]==45)iqctr++;
+        if(iq[8]==2)iqctr++;
+        int mainch=0;
+        do{  System.out.println("Select your choice.....");
+            System.out.println("Science [1]");
+            System.out.println("Commerce [2]");
+            System.out.println("ARTS [3]");
+            System.out.println("Haven't decided [4]");
+            mainch=sc.nextInt();
+            if(mainch==1)
+            {obj.Science(iqctr, name, school);
+            }
+            if(mainch==2)
+                obj.Commerce(iqctr, name, school);
+            if(mainch==3)
+                obj.Arts(iqctr, name, school);
+            if(mainch==4)
+                obj.IDK(iqctr, name, school);}while(mainch>=5 && mainch<=0);
+    }
+}
+
+/* 
+ System.out.println("Name the first cryptocurrency in the world");
+System.out.println("How likely are you to inherit a business");
+System.out.println("How likely are you to start a business");
+System.out.println("How interested are you in the stock market? ");
+System.out.println("Are you good at public speaking?");
+System.out.println("Is hillary clinton a democrat or a republican? ");
+System.out.println("Are you interested in law?");
+System.out.println("Actuarial Science");
+System.out.println("Full form of NSE");
+System.out.println("In which country was the world's first insurance compant started");
+System.out.println("Name the first cryptocurrency in the world");
+System.out.println("How likely are you to inherit a business");
+System.out.println("How likely are you to start a business");
+System.out.println("How interested are you in the stock market? ");
+System.out.println("Are you good at public speaking?");
+System.out.println("Is hillary clinton a democrat or a republican? ");
+System.out.println("Are you interested in law?");
+System.out.println("Actuarial Science");
+System.out.println("Full form of NSE");
+System.out.println("In which country was the world's first insurance company started");
+
+          
+ */
